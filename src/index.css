@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Islamic app design system - HSL colors only */
+    --background: 0 0% 100%;
+    --foreground: 158 84% 12%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 158 84% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 158 84% 12%;
+
+    /* Islamic green primary */
+    --primary: 158 64% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 158 64% 45%;
+
+    /* Elegant secondary */
+    --secondary: 158 20% 94%;
+    --secondary-foreground: 158 84% 12%;
+
+    --muted: 158 15% 96%;
+    --muted-foreground: 158 20% 45%;
+
+    /* Golden accent */
+    --accent: 45 95% 58%;
+    --accent-foreground: 158 84% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 158 20% 88%;
+    --input: 158 20% 90%;
+    --ring: 158 64% 35%;
+
+    /* Custom Islamic design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-mosque: linear-gradient(180deg, hsl(158 30% 25%), hsl(158 50% 15%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 100% 85%), hsl(45 100% 90%));
+    --shadow-mosque: 0 20px 60px -10px hsl(var(--primary) / 0.3);
+    --shadow-elegant: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode Islamic theme */
+    --background: 158 50% 8%;
+    --foreground: 158 20% 95%;
+
+    --card: 158 40% 12%;
+    --card-foreground: 158 20% 95%;
+
+    --popover: 158 40% 12%;
+    --popover-foreground: 158 20% 95%;
+
+    --primary: 158 64% 45%;
+    --primary-foreground: 158 50% 8%;
+    --primary-glow: 158 64% 55%;
+
+    --secondary: 158 30% 18%;
+    --secondary-foreground: 158 20% 90%;
+
+    --muted: 158 30% 15%;
+    --muted-foreground: 158 20% 70%;
+
+    --accent: 45 95% 65%;
+    --accent-foreground: 158 50% 8%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 158 30% 20%;
+    --input: 158 30% 18%;
+    --ring: 158 64% 45%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-mosque: linear-gradient(180deg, hsl(158 50% 8%), hsl(158 40% 12%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 50% 20%), hsl(45 60% 25%));
+    --shadow-mosque: 0 20px 60px -10px hsl(var(--primary) / 0.4);
+    --shadow-elegant: 0 8px 30px -8px hsl(var(--primary) / 0.25);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

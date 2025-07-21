@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adhan - Prayer Times & Qibla Finder</title>
+    <meta name="description" content="Adhan is a complete Islamic tool that works 100% offline. It provides accurate prayer times (Salah), real-time Adhan audio alerts, a built-in Qibla Finder with compass, and Hijri Islamic calendar." />
+    <meta name="author" content="Lovable" />
+    <meta name="keywords" content="prayer times, adhan, qibla, islamic calendar, hijri, muslim, salah, compass, offline" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#28a75f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Adhan" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-512x512.png" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Adhan - Prayer Times & Qibla Finder" />
+    <meta property="og:description" content="Complete Islamic tool that works 100% offline. Prayer times, Qibla finder, and Hijri calendar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon-512x512.png" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:title" content="Adhan - Prayer Times & Qibla Finder" />
+    <meta name="twitter:description" content="Complete Islamic tool that works 100% offline. Prayer times, Qibla finder, and Hijri calendar." />
+    <meta name="twitter:image" content="/icon-512x512.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+              
+              // Request notification permission
+              if ('Notification' in window && navigator.serviceWorker) {
+                if (Notification.permission === 'default') {
+                  Notification.requestPermission();
+                }
+              }
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
